@@ -1,0 +1,362 @@
+@font-face {
+    font-family: "PrimaryFont";
+    src: url("montserrat/Montserrat-VariableFont_wght.ttf");
+    }
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: 'PrimaryFont', Arial, sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+.tracker--toggleContainer{
+    width: 225px;
+    display: flex;
+    background-color: #141414;
+    color: white;
+    justify-content: space-around;
+    padding: 12px;
+    border-radius: 30px;
+    position: relative;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    z-index: 1;
+    cursor: default;
+}
+
+#hover{
+    width: 50%;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translate(5px, -50%);
+    height: calc(100% - 10px);
+    background-color: transparent;
+    border-radius: 30px;
+    backdrop-filter: invert(1);
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+header a, .welcome--links, section a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.welcome--links{
+    margin: 0px 5px 0px 5px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    position: relative;
+    padding: 50px 75px 0px 75px;
+    z-index: 0;
+    flex-wrap: wrap-reverse;
+    flex-shrink: 1;
+}
+
+.date{
+    color: #C6C6C6;
+}
+
+h1{
+    color: #3D3D3D;
+    font-size: 4rem;
+}
+
+#input--button{
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 15px 35px 15px 35px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    height: fit-content;
+}
+
+.card--container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 75px;
+}
+
+.card{
+    border-radius: 15px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    aspect-ratio: 1/1;
+    height: 275px;
+    height: clamp(150px, 35vw,275px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 30px 10px 0px;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.card>h1{
+    font-size: clamp(1rem, 10vw,5rem);
+}
+
+.card>p{
+    color: #B1B1B1;
+    font-weight: 500;
+}
+
+.delete{
+    all: unset;
+    position: absolute;
+    right: 7.5%;
+    top: 7.5%;
+    aspect-ratio: 1/1;
+    height: 25px;
+    cursor: pointer;
+    background-image: url(images/minus.png);
+    background-size: contain;
+}
+
+#blur{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(7.5px);
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+
+#addInputContainer{
+    aspect-ratio: 220/185;
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 800px;
+    background-color: white;
+    padding: 80px;
+    z-index: 2;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.123);
+    border-radius: 10px;
+}
+
+#close{
+    aspect-ratio: 1/1;
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+
+#addInputContainer>h2{
+    font-size: 45px;
+    color: #3D3D3D;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#addInputContainer>h2>span{
+    color: #7C7C7C;
+    font-size: 1rem;
+    margin-left: 15px;
+}
+
+#addInputContainer>input, section input{
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+#input1,#input2,#input3,#input4, section input{
+    padding: 12px;
+    border: #c3c3c3 solid 2px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+section input{
+    max-width: 400px;
+}
+
+section form{
+    display: inline;
+}
+
+section a{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#input1{
+    max-width: 500px;
+}
+
+#input2{
+    max-width: 300px;
+}
+
+#input3, #input4{
+    max-width: 150px;
+}
+
+.radio{
+    display: inline-flex;
+    align-items: center;
+    height: auto;
+}
+
+input[type="radio"] {
+    background-color: transparent;
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    accent-color: #232323;
+    margin-left: 5px;
+}
+
+label{
+    height: 1rem;
+    font-weight: bold;
+    color: #3D3D3D;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#addInputContainer>button, section button{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 10px 35px 10px 35px;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+section button{
+    position: static;
+    display: inline-block;
+}
+
+.errormessage{
+    color: red;
+    display: inline;
+}
+
+.index--error{
+    color: red;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.35rem;
+    animation: errorFade 3s;
+    animation-fill-mode: forwards;
+    font-weight: bold;
+    background-color: white;
+    padding: 20px;
+    height: fit-content;
+    border: red 2px solid;
+    pointer-events: none;
+}
+
+section{
+    margin-left: 75px;
+    margin-top: 30px;
+}
+
+@keyframes errorFade{
+    0%{
+        display: block;
+        opacity: 1;
+    }
+    99%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    main{
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #input--button{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .card--container{
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card{
+        margin: 10px;
+    }
+
+    section form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+    }
+
+    section{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    section a{
+        display: block;
+        margin: auto;
+        width: fit-content;
+        margin-top: 15px;
+    }
+
+    #addInputContainer{
+        padding: 50px;
+    }
+}
